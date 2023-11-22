@@ -48,11 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
 const totalCheckbox = document.querySelectorAll('input[type="checkbox"]');
 const counterBar = document.querySelector(".counter-bar")
 
-
-
 let counter = document.querySelector('#counter')
 totalCheckbox.forEach(function (checkbox) {
     checkbox.addEventListener('click', () => {
+        
         const checked = document.querySelectorAll('input[type="checkbox"]:checked')
         counter.innerHTML = `${checked.length} / ${totalCheckbox.length} completed`
         // counter bar js

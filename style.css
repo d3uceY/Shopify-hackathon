@@ -41,6 +41,10 @@ button {
     justify-content: center;
 }
 
+.border {
+    border: 1px solid;
+}
+
 .align-items-center {
     align-items: center;
 }
@@ -61,15 +65,111 @@ body {
 
 
 /* navigation css */
-.popup-navigation{
-   position: fixed;
-   border: 1px solid black;
-   right: 0px;
-   top: 0px;
-   width: 100%;
-   max-width: 320px;
+
+/* .popup-navigation css */
+.popup-navigation {
+    z-index: 10;
+    color: var(--font-dark);
+    position: fixed;
+    border: 1px solid var(--bg-color);
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    max-width: 320px;
+    background: white;
+    padding: 0.2rem;
+    font-size: 13px;
+    font-weight: 400;
+    border-radius: 14px;
 }
 
+.popup-nav-avatar {
+    background: var(--bg-color);
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.popup-nav-avatar>div:nth-child(1) {
+    background: var(--green);
+    color: var(--font-mid);
+    height: 28px;
+    width: 28px;
+    display: grid;
+    place-items: center;
+    font-size: 10.5px;
+    font-weight: 500;
+    border-radius: 5px;
+    aspect-ratio: 1/1;
+}
+
+.popup-nav-avatar>div:nth-child(2) {
+    color: var(--font-dark);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.full-name {
+    width: 100%;
+    margin-left: 6px;
+}
+
+.store {
+    gap: 8px;
+    padding: 6px;
+    border-radius: 8px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+.store:hover{
+    background: var(--bg-color);
+}
+
+.first-section {
+    border-bottom: 1px solid var(--bg-color);
+}
+
+.second-section>div {
+    padding: 6px;
+    border-radius: 8px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.second-section > div:last-child{
+    margin-bottom: 2px;
+}
+
+.second-section>div:hover{
+    background: var(--bg-color);
+}
+
+.second-section {
+    border-bottom: 1px solid var(--bg-color);
+}
+
+.email{
+    color: var(--font-mid);
+    font-size: 12px;
+}
+
+.third-section-name{
+    font-weight: 500;
+}
+
+.third-section>div {
+    padding: 6px;
+    border-radius: 8px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.third-section>div:hover{
+    background: var(--bg-color);
+}
+
+/* .popup-navigation css */
 nav {
     background-color: var(--strokes-100);
     display: flex;
@@ -92,12 +192,12 @@ nav {
     padding: 0.7rem 0.5rem;
 }
 
-.search-bar:hover{
+.search-bar:hover {
     border: 1px solid white;
 }
 
 .search-bar:focus,
-.search-bar:focus-visible{
+.search-bar:focus-visible {
     border: 2px solid white;
 }
 
@@ -111,7 +211,7 @@ nav {
 }
 
 .search-bar input::placeholder {
-    color: var(--bg);
+    color: var(--bg-color);
     font-size: 14px;
 }
 
@@ -156,7 +256,7 @@ nav {
 .account-name-container:focus,
 .account-name-container:focus-visible,
 .bell-container:focus,
-.bell-container:focus-visible{
+.bell-container:focus-visible {
     border: 1px solid black;
     outline: 2px solid var(--focused);
     user-select: none;
@@ -441,7 +541,7 @@ p>a {
     border-radius: 9px;
 }
 
-.import-button:focus{
+.import-button:focus {
     border: 2px solid blue;
 }
 
@@ -466,12 +566,12 @@ p>a {
     box-sizing: border-box;
 }
 
-.setup-guide-btn:focus{
+.setup-guide-btn:focus {
     border: 2px solid white;
-    outline:2px solid var(--focused)
+    outline: 2px solid var(--focused)
 }
 
-.setup-guide-btn:focus:before{
+.setup-guide-btn:focus:before {
     display: none;
 }
 
