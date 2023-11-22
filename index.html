@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>UpFront Shopify Hackathon</title>
+</head>
+
+<body>
+    <div>
+        <nav class="nav">
+            <div class="logo">
+                <picture>
+                    <source media="(max-width:739px)" srcset="/images/logo-smallscreen.svg">
+                    <img src="/images/Shopify-logo.svg" alt="this is the logo">
+                </picture>
+            </div>
+            <div class="search-bar">
+                <img src="/images/SearchMinor.svg" alt="search icon">
+                <input type="text" placeholder="Search">
+            </div>
+
+            <div class="avatar-container">
+                <div class="bell-container ">
+                    <img src="/images/bell-icon.svg" alt="this is a bell">
+                </div>
+                <div class="account-name-container">
+                    <div class="davii">Davii Collections</div>
+                    <div>DC</div>
+                </div>
+            </div>
+        </nav>
+        <!-- main section -->
+        <main>
+            <div>
+                <div class="popup" id="popup">
+                    <p>Extend your trial for $1/month for 3 months on select plans.</p>
+                    <div class="select-plan-container">
+                        <button class="select-plan-button">Select a Plan</button>
+                        <button class="cancel-button" id="cancelButton">
+                            <img src="/images/x.svg" alt="cancel">
+                        </button>
+                    </div>
+                </div>
+                <div class="setup-guide-container">
+                    <!-- header -->
+                    <div class="header">
+                        <div>
+                            <h2>Setup guide</h2>
+                            <p>Use this personalized guide to get your store up and running.</p>
+                            <div class="counter-container flex align-items-center">
+                                <div id="counter">0 / 5 completed</div>
+                                <div class="counter-bar-container">
+                                    <div class="counter-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="arrow-container .arrow-rotate" id="accordionBtn">
+                            <img src="/images/arrow.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="setup-guide mt-2" id="accordionItem">
+                        <!-- block-1 -->
+                        <div class="block  block-1">
+                            <div>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox-1" class="checkbox-input">
+                                    <label for="checkbox-1" class="checkbox-label">Customize your online store</label>
+                                </div>
+                                <div class="description-container">
+                                    <p>Choose a theme and add your logo, colors, and images to reflect your brand.<a
+                                            href="#"> Learn more</a></p>
+                                </div>
+                                <div class="button-container">
+                                    <button class="setup-guide-btn">Customize theme</button>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="/images/image-1.png" alt="">
+                            </div>
+                        </div>
+                        <!-- block-2 -->
+                        <div class="block block-collapse  block-2">
+                            <div>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox-2" class="checkbox-input"> <label
+                                        for="checkbox-2" class="checkbox-label">Add your first product</label>
+                                </div>
+                                <div class="description-container">
+                                    <p>Write a description, add photos, and set pricing for the products you plan to sell.<a
+                                            href="#"> Learn more</a></p>
+                                </div>
+                                <div class="button-container flex">
+                                    <button class="setup-guide-btn">Add Product</button>
+                                    <button class="import-button">
+                                      Import product  
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="/images/image-2.png" alt="">
+                            </div>
+                        </div>
+                        <!-- block-3 -->
+                        <div class="block block-collapse  block-3">
+                            <div>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox-3" class="checkbox-input"> <label
+                                        for="checkbox-3" class="checkbox-label">Add a custom domain</label>
+                                </div>
+                                <div class="description-container">
+                                    <p>Your current domain is 222219.myshopify.com but you can add a custom domain to help customers find your online store.<a
+                                            href="#"> Learn more</a></p>
+
+                                </div>
+                                <div class="button-container">
+                                    <button class="setup-guide-btn">Add domain</button>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="/images/image-3.png" alt="">
+                            </div>
+                        </div>
+                        <!-- block-4 -->
+                        <div class="block block-collapse block-4">
+                            <div>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox-4" class="checkbox-input"> <label
+                                        for="checkbox-4" class="checkbox-label">Name your store</label>
+                                </div>
+                                <div class="description-container">
+                                    <p>Your temporary store name is currently Davii collections. The store name appears in your admin and your online store.<a
+                                            href="#"> Learn more</a></p>
+                                </div>
+                                <div class="button-container">
+                                    <button class="setup-guide-btn">Name store</button>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="/images/image-4.png" alt="">
+                            </div>
+                        </div>
+                        <!-- block-5 -->
+                        <div class="block block-collapse  block-5">
+                            <div>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="checkbox-5" class="checkbox-input"> <label
+                                        for="checkbox-5" class="checkbox-label">Set up a payment provider</label>
+                                </div>
+                                <div class="description-container">
+                                    <p>Choose a payment provider to start accepting payments. You’ll need to create an account with the payment provider and set it up with your Shopify store.<a
+                                            href="#"> Learn more</a></p>
+                                </div>
+                                <div class="button-container">
+                                    <button class="setup-guide-btn">Set up payment</button>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="/images/image-5.png" alt="">
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+
+
+
+
+    <script src="/app.js"></script>
+</body>
+
+</html>

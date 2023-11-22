@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+:root {
+    --grey-50: #656266;
+    --grey-100: #616161;
+    --grey-200: #322F33;
+    --grey-300: #1C181D;
+    --grey-btn: #404040;
+    --font-light: #E3E3E3;
+    --font-mid: #616161;
+    --font-dark: #323232;
+    --strokes-50: #EBEBEB;
+    --strokes-100: hsl(0, 0%, 10%);
+    --strokes-200: rgb(255, 255, 255, 20%);
+    --hover: #F7F7F7;
+    --pressed: #F0F0F0;
+    --focused: #005BD3;
+    --bg-color: #F1F1F1;
+    --green: #36fba1;
+    --padding-x: 1rem;
+}
+
+/* some boiler plate css i made because i was tired of "hard-coding" */
+.flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+/* some boiler plate css i made because i was tired of "hard-coding" */
+
+body {
+    background: var(--bg-color);
+}
+
+
+/* navigation css */
+nav {
+    background-color: var(--strokes-100);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.6rem;
+    margin-bottom: 2rem;
+    gap: 10px;
+}
+
+.search-bar {
+    border: 1px solid var(--grey-100);
+    background: var(--grey-200);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    color: #fbfbfb;
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 0.5rem;
+}
+
+.search-bar input {
+    background: var(--grey-200);
+    border: 0px;
+    outline: 0px;
+    color: #fbfbfb;
+    width: 100%;
+    margin-left: 0.5rem;
+}
+
+.search-bar input::placeholder {
+    color: var(--bg);
+    font-size: 14px;
+}
+
+.avatar-container {
+    display: flex;
+    gap: 0.7rem;
+}
+
+.bell-container {
+    background: var(--grey-200);
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bell-container:hover {
+    --hover: #616161;
+    background: var(--hover);
+    cursor: pointer;
+}
+
+
+.account-name-container {
+    background: var(--grey-200);
+    border-radius: 10px;
+    color: var(--font-light);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding-left: 0.7rem;
+    cursor: pointer;
+}
+
+.account-name-container:hover {
+    --hover: #616161;
+    background: var(--hover);
+}
+
+
+.account-name-container>div:nth-child(2) {
+    background: var(--green);
+    color: black;
+    height: 89%;
+    width: 40px;
+    display: grid;
+    place-items: center;
+    font-weight: 500;
+    color: var(--font-mid);
+    border-radius: 10px;
+}
+
+/* main section css */
+
+main {
+    font-size: 13px;
+    max-width: 800px;
+    margin: 0px auto;
+    font-weight: 500;
+}
+
+.popup {
+    background: var(--strokes-100);
+    color: var(--font-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 0px var(--padding-x);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.2rem;
+}
+
+.select-plan-container {
+    display: flex;
+    gap: 1.3rem;
+    align-items: center;
+}
+
+.select-plan-button {
+    padding: 8px;
+    font-weight: 700;
+    color: var(--grey-300);
+    border-radius: 5px;
+    border: 0px;
+}
+
+.cancel-button {
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+}
+
+.setup-guide-container {
+    border: 1px solid var(--font-light);
+    background-color: white;
+    border-radius: 30px;
+    padding: 1.1rem 0.7rem;
+}
+
+.setup-guide {
+    overflow: hidden;
+    transition: all ease-in-out 250ms;
+    /* margin-top: 2rem; */
+}
+
+.header {
+    line-height: 1.8;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1rem;
+    padding-left: 5px;
+}
+
+.header h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--font-dark);
+}
+
+.header p {
+    color: var(--font-dark);
+    font-weight: 300;
+}
+
+/* counter css */
+
+.counter-container {
+    margin-top: 20px;
+}
+
+#counter {
+    color: var(--font-mid);
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--font-dark);
+}
+
+.counter-bar-container {
+    width: 72px;
+    height: 4px;
+    background: var(--font-light);
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 8px;
+    margin-top: 1px;
+}
+
+.counter-bar {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #000;
+    width: 0;
+}
+
+.arrow-container {
+    outline: 0px;
+    border: 0px;
+    height: 25px;
+    width: 25px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background: transparent;
+    transform: rotateX(180deg);
+    transition: all ease-in-out 250ms;
+}
+
+.arrow-container.arrow-rotate {
+    transform: rotateX(0);
+}
+
+.arrow-container:hover {
+    background: var(--hover);
+}
+
+
+/* checkbox css */
+
+.checkbox-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.checkbox-input {
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+.checkbox-label {
+    position: relative;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--font-dark);
+}
+
+.checkbox-label:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-radius: 100%;
+    border: 2px dashed var(--font-mid);
+    position: absolute;
+    left: -36px;
+    top: -2px;
+    transition: all ease-in-out 250ms;
+    cursor: pointer;
+}
+
+.checkbox-label:hover:before {
+    border-style: solid;
+}
+
+.checkbox-label::after {
+    content: '';
+    font-size: 10px;
+    position: absolute;
+    width: 3px;
+    height: 7px;
+    left: -26px;
+    top: 5px;
+    border-top: 1.9px solid white;
+    border-left: 1.9px solid white;
+    transition: all ease-in-out 250ms;
+    scale: 0.3;
+    cursor: pointer;
+}
+
+.checkbox-input:is(:checked)+.checkbox-label:before {
+    background: #000;
+    border: 2px solid black;
+}
+
+
+.checkbox-input:is(:checked)+.checkbox-label:after {
+    scale: 1;
+    transform: rotate(219deg);
+}
+
+.checkbox-input:is(:checked)+.checkbox-label {
+    font-weight: 700;
+}
+
+/* setup guide block css */
+
+.block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 5px;
+    padding-bottom: 15px;
+    transition: all ease-in-out 250ms;
+    background: var(--bg-color);
+    border-radius: 20px;
+    margin-bottom: 0.2rem;
+}
+
+/* this is the css that collapses the block */
+
+.block.block-collapse {
+    background: white;
+    height: 42px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.block-collapse .description-container,
+.block-collapse img,
+.block-collapse .button-container {
+    display: none;
+}
+
+
+/* this is the css that collapses the block */
+
+
+.description-container {
+    margin-left: 38px;
+    color: var(--font-mid);
+    max-width: 500px;
+}
+
+.description-container p {
+    line-height: 1.5;
+}
+
+p>a {
+    color: blue;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* button css */
+
+.button-container {
+    margin-left: 38px;
+    margin-top: 1.2rem;
+    gap: 2rem;
+}
+
+.import-button {
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    color: #323232;
+    padding: 8px 15px;
+    border-radius: 9px;
+}
+
+.import-button:hover {
+    background: #E7E7E7;
+}
+
+.setup-guide-btn {
+    background: var(--grey-btn);
+    border: 0px;
+    padding: 8px 15px;
+    color: var(--font-light);
+    font-weight: 600;
+    font-size: 12px;
+    border-radius: 9px;
+    position: relative;
+    border-top: 2.4px solid #666666;
+    border-left: 2.4px solid #666666;
+    border-right: 2.4px solid #666666;
+    /* border-bottom: 2.5px solid black; */
+    outline: 2px solid black;
+}
+
+.setup-guide-btn:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    border-bottom: 2px solid black;
+    border-radius: 9px;
+}
+
+.setup-guide-btn:hover {
+    background: var(--grey-200);
+}
+
+/* media query */
+@media screen and (max-width: 895px) {
+    .search-bar {
+        max-width: 300px;
+    }
+
+    main {
+        max-width: 650px;
+    }
+}
+
+@media screen and (max-width: 739px) {
+    .davii {
+        display: none;
+    }
+
+    .account-name-container {
+        padding: 0px;
+    }
+
+    .bell-container {
+        background: transparent;
+    }
+
+    nav {
+        padding: 1rem 1rem;
+    }
+}
+
+@media screen and (max-width: 649px) {
+    .popup {
+        border-radius: 0px;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+        position: relative;
+        padding-right: 2rem;
+    }
+
+    .cancel-button {
+        position: absolute;
+        right: 15px;
+        top: 22px;
+    }
+
+    .setup-guide-container {
+        border-radius: 0px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .block img {
+        display: none;
+    }
+}
+
+/* media query */
