@@ -5,6 +5,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    user-select: none;
 }
 
 button {
@@ -60,6 +61,15 @@ body {
 
 
 /* navigation css */
+.popup-navigation{
+   position: fixed;
+   border: 1px solid black;
+   right: 0px;
+   top: 0px;
+   width: 100%;
+   max-width: 320px;
+}
+
 nav {
     background-color: var(--strokes-100);
     display: flex;
@@ -80,6 +90,15 @@ nav {
     display: flex;
     align-items: center;
     padding: 0.7rem 0.5rem;
+}
+
+.search-bar:hover{
+    border: 1px solid white;
+}
+
+.search-bar:focus,
+.search-bar:focus-visible{
+    border: 2px solid white;
 }
 
 .search-bar input {
@@ -132,6 +151,15 @@ nav {
 .account-name-container:hover {
     --hover: #616161;
     background: var(--hover);
+}
+
+.account-name-container:focus,
+.account-name-container:focus-visible,
+.bell-container:focus,
+.bell-container:focus-visible{
+    border: 1px solid black;
+    outline: 2px solid var(--focused);
+    user-select: none;
 }
 
 
@@ -193,7 +221,7 @@ main {
 .setup-guide-container {
     border: 1px solid var(--font-light);
     background-color: white;
-    border-radius: 30px;
+    border-radius: 15px;
     padding: 1.1rem 0.7rem;
 }
 
@@ -413,6 +441,10 @@ p>a {
     border-radius: 9px;
 }
 
+.import-button:focus{
+    border: 2px solid blue;
+}
+
 .import-button:hover {
     background: #E7E7E7;
 }
@@ -431,6 +463,16 @@ p>a {
     border-right: 2.4px solid #666666;
     /* border-bottom: 2.5px solid black; */
     outline: 2px solid black;
+    box-sizing: border-box;
+}
+
+.setup-guide-btn:focus{
+    border: 2px solid white;
+    outline:2px solid var(--focused)
+}
+
+.setup-guide-btn:focus:before{
+    display: none;
 }
 
 .setup-guide-btn:before {
