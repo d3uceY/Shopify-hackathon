@@ -1,5 +1,31 @@
+//navigation pop-up
+const navPopupBtn = document.querySelector('.account-name-container')
+const navPopup = document.querySelector('.popup-navigation')
 
-// popup js
+navPopupBtn.addEventListener('click', () => {
+    navPopup.classList.toggle('popup-navigation-open')
+    notificationPopup.classList.remove('notification-popup-open')
+})
+//navigation pop-up
+
+window
+
+//notification pop-up
+const notificationPopup = document.querySelector('.notification-popup');
+const notificationButton = document.querySelector('.bell-container')
+
+notificationButton.addEventListener('click', () => {
+    notificationPopup.classList.toggle('notification-popup-open')
+    navPopup.classList.remove('popup-navigation-open')
+})
+
+//notification pop-up
+
+
+
+
+
+// black pop-up
 const cancelButton = document.getElementById('cancelButton');
 const popop = document.getElementById('popup')
 
@@ -7,7 +33,7 @@ cancelButton.addEventListener('click', () => {
     popop.style.display= 'none';
     popop.style.transition = 'all ease-in-out 250ms'
 })
-// popup js
+// black pop-up
 
 // setup guide accordion js
 const accordionBtn = document.getElementById('accordionBtn')

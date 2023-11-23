@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>UpFront Shopify Hackathon</title>
+    <link rel="shortcut icon" href="/images/logo-smallscreen.svg" type="image/x-icon">
+    <title>UpFront Shopify Hackathon by Jesse</title>
 </head>
 
 <body>
     <div>
         <nav class="nav">
-            <div class="popup-navigation">
+            <!-- pop up navigation -->
+            <div class="popup-navigation .popup-navigation-open">
                 <div class="first-section">
                     <div class="flex align-items-center popup-nav-avatar">
                         <div>DC</div>
@@ -38,13 +40,29 @@
                 </div>
                 <div class="third-section">
                     <div>
-                        <div  class="third-section-name">David Micheal</div>
+                        <div class="third-section-name">David Micheal</div>
                         <div class="email">davidmicheal@gmail.com</div>
                     </div>
                     <div>Manage account</div>
                     <div>Log out</div>
                 </div>
             </div>
+            <!-- pop up navigation -->
+            <!-- notification-popup -->
+            <div class="notification-popup">
+                <div class="flex justify-content-between align-items-center notification-popup-header">
+                    <div>Alerts</div>
+                    <div class="flex align-items-center notification-popup-icons">
+                        <img src="/images/filter.svg" alt="filter">
+                        <img src="/images/tick-circle.svg" alt="tick">
+                    </div>
+                </div>
+                <div class="notification-popup-description">
+                    Alerts about your store and account will show here
+                </div>
+            </div>
+            <!-- notification-popup -->
+            <!-- navbar -->
             <div class="logo">
                 <picture>
                     <source media="(max-width:739px)" srcset="/images/logo-smallscreen.svg">
@@ -66,6 +84,7 @@
                 </div>
             </div>
         </nav>
+        <!-- navbar -->
         <!-- main section -->
         <main>
             <div>
