@@ -276,7 +276,7 @@ nav {
 }
 
 .search-bar input::placeholder {
-    color: var(--bg-color);
+    color: #B5B5B5;
     font-size: 14px;
 }
 
@@ -368,6 +368,7 @@ main {
     border-radius: 10px;
     margin-bottom: 1.2rem;
 }
+
 
 .select-plan-container {
     display: flex;
@@ -466,7 +467,6 @@ main {
     place-items: center;
     border-radius: 5px;
     background: transparent;
-    transform: rotateX(180deg);
     transition: all ease-in-out 250ms;
 }
 
@@ -475,7 +475,7 @@ main {
 }
 
 .arrow-container.arrow-rotate {
-    transform: rotateX(0);
+    transform: rotateX(180deg);
 }
 
 .arrow-container:hover {
@@ -720,6 +720,10 @@ p>a {
 
     .setup-guide-container {
         border-radius: 0px;
+    }
+
+    .account-name-container>div:nth-child(2){
+        height: 100%;
     }
 }
 
