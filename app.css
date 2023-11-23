@@ -57,7 +57,7 @@ button {
     margin-top: 2rem;
 }
 
-.focused:focus{
+.focused:focus-visible {
     outline: 1px solid var(--focused);
 }
 
@@ -65,6 +65,10 @@ button {
 
 body {
     background: var(--bg-color);
+}
+
+.logo:focus {
+    outline: 2px solid #005BD3;
 }
 
 
@@ -91,6 +95,12 @@ body {
     opacity: 0;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
+
+.popup-navigation a{
+    text-decoration: none;
+    color: var(--font-dark);
+}
+
 
 /* open state */
 
@@ -191,6 +201,7 @@ body {
 
 /* .notification-popup css */
 .notification-popup {
+    text-align: start;
     background: white;
     position: fixed;
     top: 85px;
@@ -248,22 +259,21 @@ nav {
 .search-bar {
     border: 1px solid var(--grey-100);
     background: var(--grey-200);
-    border-radius: 10px;
+    border-radius: 8px;
     width: 100%;
     max-width: 500px;
     color: #fbfbfb;
     display: flex;
     align-items: center;
-    padding: 0.7rem 0.5rem;
+    padding: 8px;
 }
 
 .search-bar:hover {
     border: 1px solid white;
 }
 
-.search-bar:focus,
-.search-bar:focus-visible {
-    border: 2px solid white;
+.search-bar:focus-within {
+    border: 2px solid white !important;
 }
 
 .search-bar input {
@@ -321,9 +331,8 @@ nav {
     background: var(--hover);
 }
 
-.account-name-container:focus,
+
 .account-name-container:focus-visible,
-.bell-container:focus,
 .bell-container:focus-visible {
     border: 1px solid black;
     outline: 2px solid var(--focused);
@@ -362,10 +371,8 @@ main {
     align-items: center;
     justify-content: space-between;
     font-size: 14px;
-    padding: 0px var(--padding-x);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-radius: 10px;
+    padding:  12px 8px 12px 16px ;
+    border-radius: 8px;
     margin-bottom: 1.2rem;
 }
 
@@ -377,17 +384,26 @@ main {
 }
 
 .select-plan-button {
-    padding: 8px;
-    font-weight: 700;
-    color: var(--grey-300);
+    padding: 6px 12px 6px 12px;
     border-radius: 5px;
     border: 0px;
+}
+
+.select-plan-button a{
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--grey-300);
+    text-decoration: none;
 }
 
 .cancel-button {
     background-color: transparent;
     outline: 0px;
     border: 0px;
+}
+
+.cancel-button:focus-visible {
+    outline: 2px solid var(--focused);
 }
 
 .setup-guide-container {
@@ -435,9 +451,6 @@ main {
     color: var(--font-dark);
 }
 
-#counter:focus{
-   
-}
 
 .counter-bar-container {
     width: 72px;
@@ -457,12 +470,14 @@ main {
     left: 0;
     background: #000;
     width: 0;
+    transition: all ease-in 250ms;
 }
 
 .arrow-container {
     border: 0px;
     height: 25px;
     width: 25px;
+    aspect-ratio: 1/1;
     display: grid;
     place-items: center;
     border-radius: 5px;
@@ -470,7 +485,7 @@ main {
     transition: all ease-in-out 250ms;
 }
 
-.arrow-container:focus {
+.arrow-container:focus-visible {
     outline: 1px solid var(--focused);
 }
 
@@ -495,6 +510,9 @@ main {
     cursor: pointer;
 }
 
+input[type="checkbox"]:focus-visible {
+    border: 2px solid var(--focused);
+}
 
 .checkbox-label {
     position: relative;
@@ -620,7 +638,7 @@ p>a {
     border-radius: 9px;
 }
 
-.import-button:focus {
+.import-button:focus-visible {
     border: 2px solid blue;
 }
 
@@ -641,16 +659,16 @@ p>a {
     border-left: 2.4px solid #666666;
     border-right: 2.4px solid #666666;
     /* border-bottom: 2.5px solid black; */
-    outline: 2px solid black;
+    outline: 2px solid var(--grey-300);
     box-sizing: border-box;
 }
 
-.setup-guide-btn:focus {
+.setup-guide-btn:focus-visible {
     border: 2px solid white;
     outline: 2px solid var(--focused)
 }
 
-.setup-guide-btn:focus:before {
+.setup-guide-btn:focus-visible:before {
     display: none;
 }
 
@@ -665,8 +683,22 @@ p>a {
     border-radius: 9px;
 }
 
+.setup-guide-btn:active:before {
+    border-top: 2px solid black;
+    border-bottom: unset;
+    top: -3px;
+    width: 100%;
+}
+
+.setup-guide-btn:active {
+    border-top: 2.4px solid var(--grey-200);
+    border-left: 2.4px solid var(--grey-200);
+    border-right: 2.4px solid var(--grey-200);
+}
+
 .setup-guide-btn:hover {
     background: var(--grey-200);
+    outline: 2px solid var(--grey-200);
 }
 
 /* media query */
@@ -722,7 +754,7 @@ p>a {
         border-radius: 0px;
     }
 
-    .account-name-container>div:nth-child(2){
+    .account-name-container>div:nth-child(2) {
         height: 100%;
     }
 }
