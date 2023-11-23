@@ -57,6 +57,10 @@ button {
     margin-top: 2rem;
 }
 
+.focused:focus{
+    outline: 1px solid var(--focused);
+}
+
 /* some boiler plate css i made because i was tired of "hard-coding" */
 
 body {
@@ -110,7 +114,7 @@ body {
     width: 28px;
     display: grid;
     place-items: center;
-    font-size: 10.5px;
+    font-size: 11px;
     font-weight: 500;
     border-radius: 5px;
     aspect-ratio: 1/1;
@@ -289,6 +293,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 0px;
 }
 
 .bell-container:hover {
@@ -307,6 +312,8 @@ nav {
     gap: 0.6rem;
     padding-left: 0.7rem;
     cursor: pointer;
+    outline: 0px;
+    border: 0px;
 }
 
 .account-name-container:hover {
@@ -403,7 +410,7 @@ main {
     padding-left: 5px;
 }
 
-.header h2 {
+.header h1 {
     font-size: 14px;
     font-weight: 600;
     color: var(--font-dark);
@@ -425,6 +432,10 @@ main {
     font-size: 12px;
     font-weight: 300;
     color: var(--font-dark);
+}
+
+#counter:focus{
+   
 }
 
 .counter-bar-container {
