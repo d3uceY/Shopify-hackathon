@@ -110,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const loader = document.createElement('div');
         loader.classList.add('loader')
         checkboxLabel.appendChild(loader);
-        console.log(checkboxLabel)
     })
 })
 //checkbox-loader
