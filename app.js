@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 // setup guide component js
 
-//checkbox counter js
+//checkbox  js
 const totalCheckbox = document.querySelectorAll('input[type="checkbox"]');
 const counterBar = document.querySelector(".counter-bar")
 
@@ -102,4 +102,18 @@ totalCheckbox.forEach(function (checkbox) {
     })
 
 })
-//checkbox counter js
+
+//checkbox-loader
+const checkboxLabel = document.querySelectorAll('.checkbox-label');
+document.addEventListener('DOMContentLoaded', () => {
+    checkboxLabel.forEach(function (checkboxLabel) {
+        const loader = document.createElement('div');
+        loader.classList.add('loader')
+        checkboxLabel.appendChild(loader);
+        console.log(checkboxLabel)
+    })
+})
+//checkbox-loader
+
+
+//checkbox js
