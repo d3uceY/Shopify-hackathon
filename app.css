@@ -61,6 +61,10 @@ button {
     outline: 1px solid var(--focused);
 }
 
+.focus:focus {
+    border: 1px solid var(--focused);
+}
+
 /* some boiler plate css i made because i was tired of "hard-coding" */
 
 body {
@@ -90,7 +94,8 @@ body {
     border-radius: 14px;
     top: 85px;
     transform-origin: top right;
-    transition: all 250ms;
+    transition: scale 250ms, visibility 0s;
+    visibility: hidden;
     scale: 0;
     opacity: 0;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -105,11 +110,16 @@ body {
 /* open state */
 
 .popup-navigation-open {
+    visibility: visible;
     opacity: 1;
     scale: 1;
 }
 
 /* open state */
+
+/* .popup-navigation a {
+    display: block;
+} */
 
 .popup-nav-avatar {
     background: var(--bg-color);
@@ -160,9 +170,13 @@ body {
 
 .second-section>div {
     padding: 6px;
-    border-radius: 8px;
+    border-radius: 8px; 
     margin-top: 2px;
     cursor: pointer;
+}
+
+.second-section a{
+    display: block;
 }
 
 .second-section>div:last-child {
@@ -388,10 +402,11 @@ main {
     border-radius: 5px;
     border: 1px solid #e6e6e6;
     position: relative;
+    background: var(--bg-color);
 }
 
 .select-plan-button:active {
-    box-shadow: inset -1px 3px 25px -11px rgba(0, 0, 0,0.3);
+    box-shadow: inset -1px 3px 25px -11px rgba(0, 0, 0, 0.3);
 }
 
 .select-plan-button:active:before {
@@ -421,7 +436,7 @@ main {
 
 
 
-.select-plan-button a {
+.select-plan-button{
     font-weight: 600;
     font-size: 12px;
     color: var(--grey-300);
@@ -503,6 +518,7 @@ main {
     background: #000;
     width: 0;
     transition: all ease-in 250ms;
+   transition: 500ms
 }
 
 .arrow-container {
@@ -537,11 +553,15 @@ main {
     margin-bottom: 10px;
 }
 
+.checkbox-container:focus-within:focus-visible{
+    border: 2px solid var(--focused);
+}
 
 .checkbox-input {
     opacity: 0;
     cursor: pointer;
 }
+
 
 input[type="checkbox"]:focus-visible {
     border: 2px solid var(--focused);
@@ -567,8 +587,8 @@ input[type="checkbox"]:focus-visible {
     position: absolute;
     left: -36px;
     top: -2px;
-    transition: all ease-in-out 150ms;
-    transition-delay: 150ms;
+    transition: all ease-in-out 250ms;
+    transition-delay: 250ms;
     cursor: pointer;
 }
 
@@ -586,8 +606,8 @@ input[type="checkbox"]:focus-visible {
     top: 5px;
     border-top: 1.9px solid white;
     border-left: 1.9px solid white;
-    transition: all 150ms;
-    transition-delay: 150ms;
+    transition: all 250ms;
+    transition-delay: 250ms;
     scale: 0.3;
     cursor: pointer;
 }
@@ -611,7 +631,7 @@ input[type="checkbox"]:focus-visible {
 /* loader is relative to checkbox label */
 .checkbox-input:is(:checked)+.checkbox-label .loader {
     animation-name: loader;
-    animation-duration: 150ms;
+    animation-duration: 250ms;
     animation-fill-mode: forwards;
     opacity: 1;
 }
@@ -715,6 +735,7 @@ p>a {
     color: #323232;
     padding: 8px 15px;
     border-radius: 9px;
+    text-decoration: none;
 }
 
 .import-button:focus-visible {
