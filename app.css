@@ -255,6 +255,10 @@ body {
     visibility: unset;
 }
 
+.notification-popup  svg[role="menuitem"]:focus{
+  border: 2px solid var(--focused);
+}
+
 /* open-state */
 /* .notification-popup css */
 
@@ -631,9 +635,10 @@ input[type="checkbox"]:focus-visible {
 /* loader is relative to checkbox label */
 .checkbox-input:is(:checked)+.checkbox-label .loader {
     animation-name: loader;
-    animation-duration: 0.25s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
     opacity: 1;
+    animation-iteration-count: ease-in-out;
 }
 
 .loader {
@@ -652,19 +657,13 @@ input[type="checkbox"]:focus-visible {
 @keyframes loader {
 
     0% {
-        transform: rotate(0);
+        transform: rotate(0turn);
     }
 
-    70% {
-        transform: rotate(1080deg)
-    }
-
-    90% {
-        scale: 1;
-    }
-
+   
+    
     100% {
-        scale: 0;
+        transform: rotate(1turn)
     }
 }
 
