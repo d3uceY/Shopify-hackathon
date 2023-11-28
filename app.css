@@ -103,6 +103,7 @@ body {
 .popup-navigation a {
     text-decoration: none;
     color: var(--font-dark);
+    border-radius: 8px;
 }
 
 
@@ -555,119 +556,116 @@ main {
 .checkbox-container {
     margin-top: 10px;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
-.checkbox-container:focus-within:focus-visible {
-    border: 2px solid var(--focused);
-}
-
-.checkbox-input {
-    opacity: 0;
-    cursor: pointer;
-}
-
-
-input[type="checkbox"]:focus-visible {
-    border: 2px solid var(--focused);
-}
 
 .checkbox-label {
     position: relative;
-    margin-left: 20px;
     font-weight: 500;
     font-size: 13px;
     color: var(--font-dark);
+    margin-left: 8px;
 }
 
 
-.checkbox-label:before {
-    content: '';
-    width: 20px;
-    height: 20px;
+.button-checkbox {
+    width: 27px;
+    height: 27px;
+    position: relative;
+    border: 0px;
     background: transparent;
+    border-radius: 3px;
+}
+
+.button-checkbox:focus-visible{
+    outline: 2px solid var(--focused);
+}
+
+.button-checkbox:focus-visible .unchecked{
+    fill: #d9d9d9;
+}
+
+.button-checkbox:focus .unchecked{
+    fill: #d9d9d9;
+}
+
+
+.button-checkbox:hover > .unchecked circle{
+   stroke-dasharray: 0 0;
+}
+
+
+.circle-with-checkbox {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background: #1c181d;
     border-radius: 100%;
-    --font-mid: #8A8A8A;
-    border: 2px dashed var(--font-mid);
-    position: absolute;
-    left: -36px;
-    top: -2px;
-    transition: all ease-in-out 250ms;
-    transition-delay: 0.25s;
-    cursor: pointer;
-}
-
-.checkbox-label:hover:before {
-    border-style: solid;
-}
-
-.checkbox-label::after {
-    content: '';
-    font-size: 10px;
-    position: absolute;
-    width: 3px;
-    height: 7px;
-    left: -26px;
-    top: 5px;
-    border-top: 1.9px solid white;
-    border-left: 1.9px solid white;
-    transition: all 250ms;
-    transition-delay: 0.25s;
-    scale: 0.3;
-    cursor: pointer;
-}
-
-.checkbox-input:is(:checked)+.checkbox-label:before {
-    background: #000;
-    border: 2px solid black;
-}
-
-
-.checkbox-input:is(:checked)+.checkbox-label:after {
-    scale: 1;
-    transform: rotate(219deg);
-}
-
-.checkbox-input:is(:checked)+.checkbox-label {
-    font-weight: 600;
-}
-
-
-/* loader is relative to checkbox label */
-.checkbox-input:is(:checked)+.checkbox-label .loader {
-    animation-name: loader;
-    animation-duration: 1s;
+    animation-duration: 150ms;
+    animation-name: checkboxComplete;
+    animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
-    opacity: 1;
-    animation-iteration-count: ease-in-out;
 }
 
-.loader {
-    z-index: 10;
-    border: 3px solid black;
-    height: 20px;
-    width: 20px;
-    border-radius: 100%;
-    border-right: 2px solid transparent;
+@keyframes checkboxComplete{
+    from{
+        scale: 0; transform: rotate(80deg);
+    }
+
+    to{
+       scale: 1;
+       transform: rotate(0deg);
+    }
+}
+
+.circle-with-checkbox:before {
+    content: '';
     position: absolute;
-    top: 0px;
-    left: -34px;
-    opacity: 0;
+    width: 4px;
+    height:  7px;
+    background: transparent;
+    border-bottom:1.8px solid white;
+    border-right:1.8px solid white;
+    inset: 0;
+    margin: auto;
+    top: -3px;
+    left: 0x;
+    transform: rotate(47deg);
 }
 
-@keyframes loader {
+.loading-circle{
+   animation-name: Loading;
+   animation-iteration-count: infinite;
+   animation-fill-mode: forwards;
+   animation-duration: 1s;
+   animation-timing-function: ease-in-out;
+}
 
-    0% {
+@keyframes Loading {
+    from{
         transform: rotate(0turn);
     }
-
-   
-    
-    100% {
-        transform: rotate(1turn)
+     to{
+       transform: rotate(1turn);
     }
 }
 
-/* loader is relative to checkbox label */
+.hidden {
+    display: none;
+}
+
+.circle-with-checkbox, 
+.loading-circle,
+.unchecked{
+    position: absolute;
+    inset: 0;
+}
+
+
+
+
 
 /* setup guide block css */
 
@@ -675,7 +673,7 @@ input[type="checkbox"]:focus-visible {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 5px;
+    padding: 0px 8px;
     padding-bottom: 15px;
     transition: all ease-in-out 250ms;
     background: var(--bg-color);
@@ -683,6 +681,13 @@ input[type="checkbox"]:focus-visible {
     margin-bottom: 0.2rem;
 }
 
+.block .checkbox-label{
+    font-weight: 600;
+}
+
+.block-collapse .checkbox-label{
+    font-weight: 500;
+}
 /* this is the css that collapses the block */
 
 .block.block-collapse {
@@ -702,7 +707,7 @@ input[type="checkbox"]:focus-visible {
 
 
 .description-container {
-    margin-left: 38px;
+    margin-left: 35px;
     color: var(--font-mid);
     max-width: 500px;
 }
@@ -722,7 +727,7 @@ p>a {
 /* button css */
 
 .button-container {
-    margin-left: 38px;
+    margin-left: 35px;
     margin-top: 1.2rem;
     gap: 2rem;
 }

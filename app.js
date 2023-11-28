@@ -170,69 +170,65 @@ blocks.forEach(function (block) {
 })
 
 
-//checkbox  js
+//when ('click')the button
+//the aria-checked should change from "false" to "true" and vice versa
+//when it is true, the "uncomplete checked" should dissappear and the loading icon will be enabled
+//it will only we enabled for one second and the checked image will be enabled
+//then for each checkbox that is clicked, the counter will update,
+//by updating the amount of checkbox that have aria-checked=true
 
-//this is the total amount of checkboxes available
-const totalCheckbox = document.querySelectorAll('input[type="checkbox"]');
+//when unchecked
+//complete is removed
+//loader is removed
+//while the uncomplete is shown
 
-//this is the progress bar
-const counterBar = document.querySelector(".counter-bar")
+const checkboxButton = document.querySelectorAll('#button-checkbox');
+const counter = document.querySelector('#counter')
+const counterBar = document.querySelector('.counter-bar')
 
-//this is the counter eg. "5/10 checked"
-let counter = document.querySelector('#counter')
+checkboxButton.forEach(function (checkbox) {
+    const uncomplete = checkbox.querySelector('#unchecked');
+    const complete = checkbox.querySelector('.circle-with-checkbox');
+    const loading = checkbox.querySelector('.loading-circle')
+    const hiddenClass = 'hidden'
+    const handleChecked = () => {
+        uncomplete.classList.add(hiddenClass);
+        loading.classList.remove(hiddenClass);
 
-//for each of the checkboxes
-totalCheckbox.forEach(function (checkbox) {
-    //if the particular checkbox beign iterated over is clicked
-    checkbox.addEventListener('click', () => {
-
-        //it checks if the checkbox is checked
-        if (checkbox.checked) {
-            checkbox.ariaChecked = 'true'
+        setTimeout(() => {
+            loading.classList.add(hiddenClass);
+            complete.classList.remove(hiddenClass)
+            checkbox.ariaChecked = "true"
+            const checkedCheckbox = document.querySelectorAll('[aria-checked="true"]')
             checkbox.ariaLabel = "checkbox has been checked"
+            counter.innerHTML = `${checkedCheckbox.length} / ${checkboxButton.length} completed`
+            counterBar.style.width = (checkedCheckbox.length / checkboxButton.length) * 100 + '%';
+        }, 1000);
+    }
+
+    const handleUnchecked = () => {
+        complete.classList.add(hiddenClass)
+        uncomplete.classList.remove(hiddenClass)
+        checkbox.ariaChecked = "false"
+        const checkedCheckbox = document.querySelectorAll('[aria-checked="true"]')
+        checkbox.ariaLabel = "checkbox has been unchecked"
+        counter.innerHTML = `${checkedCheckbox.length} / ${checkboxButton.length} completed`
+        counterBar.style.width = (checkedCheckbox.length / checkboxButton.length) * 100 + '%';
+    }
+
+    const handleCheckedAndUnchecked = () => {
+        isChecked = checkbox.getAttribute('aria-checked') === "true";
+
+        if (isChecked) {
+            handleUnchecked()
+            console.log('nigger')
+        } else {
+            handleChecked()
         }
-        else {
-            checkbox.ariaChecked = "false"
-            checkbox.ariaLabel = "checkbox has been unchecked press enter or space to check checkbox"
-        }
-        
-        //everytime a checkbox is clicked, this updates the amount of checkboxes being clicked
-        const checked = document.querySelectorAll('input[type="checkbox"]:checked')
+    }
 
-        //this is the counter beign updated in every click
-        counter.innerHTML = `${checked.length} / ${totalCheckbox.length} completed`
 
-        // counter bar js
-        //this is the bars width changing everytime the amount of checkbox that is checked is increasing or reducing 
-        counterBar.style.width = (checked.length / totalCheckbox.length) * 100 + "%";
-        
-        //this is the attributes of the counter everytime the amount of chekbox clicked changes
-        counter.setAttribute('aria-label', `${checked.length} out of ${totalCheckbox.length} checkboxes have been checked`)
 
-        // counter bar js
-    })
 
+    checkbox.addEventListener('click', handleCheckedAndUnchecked)
 })
-
-//checkbox-loader
-
-// this is the checkkbox label element
-const checkboxLabel = document.querySelectorAll('.checkbox-label');
-
-document.addEventListener('DOMContentLoaded', () => {
-    checkboxLabel.forEach(function (checkboxLabel) {
-        //for each of the checkbox label a new element is made called loader
-        const loader = document.createElement('div');
-
-        //and the elements class is added so it can be styled in the css
-        loader.classList.add('loader')
-
-        //then the element is appended to the loader
-        checkboxLabel.appendChild(loader);
-    })
-})
-//checkbox-loader
-
-
-//checkbox js
-
