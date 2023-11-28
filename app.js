@@ -183,47 +183,83 @@ blocks.forEach(function (block) {
 //while the uncomplete is shown
 
 const checkboxButton = document.querySelectorAll('#button-checkbox');
+
 const counter = document.querySelector('#counter')
+
 const counterBar = document.querySelector('.counter-bar')
 
+
 checkboxButton.forEach(function (checkbox) {
+
     const uncomplete = checkbox.querySelector('#unchecked');
+
     const complete = checkbox.querySelector('.circle-with-checkbox');
+
     const loading = checkbox.querySelector('.loading-circle')
+
     const hiddenClass = 'hidden'
+
+
+
     const handleChecked = () => {
+
         uncomplete.classList.add(hiddenClass);
+
         loading.classList.remove(hiddenClass);
 
+        checkbox.ariaLabel = "Loading, please wait"
+
+
         setTimeout(() => {
+
             loading.classList.add(hiddenClass);
+
             complete.classList.remove(hiddenClass)
+
             checkbox.ariaChecked = "true"
+
             const checkedCheckbox = document.querySelectorAll('[aria-checked="true"]')
+
             checkbox.ariaLabel = "checkbox has been checked"
+
             counter.innerHTML = `${checkedCheckbox.length} / ${checkboxButton.length} completed`
+
             counterBar.style.width = (checkedCheckbox.length / checkboxButton.length) * 100 + '%';
         }, 1000);
     }
 
+
+
     const handleUnchecked = () => {
+
         complete.classList.add(hiddenClass)
+
         uncomplete.classList.remove(hiddenClass)
+
         checkbox.ariaChecked = "false"
+
         const checkedCheckbox = document.querySelectorAll('[aria-checked="true"]')
+
         checkbox.ariaLabel = "checkbox has been unchecked"
+
         counter.innerHTML = `${checkedCheckbox.length} / ${checkboxButton.length} completed`
+
         counterBar.style.width = (checkedCheckbox.length / checkboxButton.length) * 100 + '%';
+
     }
 
     const handleCheckedAndUnchecked = () => {
+
         isChecked = checkbox.getAttribute('aria-checked') === "true";
 
         if (isChecked) {
+
             handleUnchecked()
-            console.log('nigger')
+
         } else {
+
             handleChecked()
+
         }
     }
 

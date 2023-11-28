@@ -256,8 +256,8 @@ body {
     visibility: unset;
 }
 
-.notification-popup  svg[role="menuitem"]:focus{
-  border: 2px solid var(--focused);
+.notification-popup svg[role="menuitem"]:focus {
+    border: 2px solid var(--focused);
 }
 
 /* open-state */
@@ -579,21 +579,21 @@ main {
     border-radius: 3px;
 }
 
-.button-checkbox:focus-visible{
+.button-checkbox:focus-visible {
     outline: 2px solid var(--focused);
 }
 
-.button-checkbox:focus-visible .unchecked{
+.button-checkbox:focus-visible .unchecked {
     fill: #d9d9d9;
 }
 
-.button-checkbox:focus .unchecked{
+.button-checkbox:focus .unchecked {
     fill: #d9d9d9;
 }
 
 
-.button-checkbox:hover > .unchecked circle{
-   stroke-dasharray: 0 0;
+.button-checkbox:hover>.unchecked circle {
+    stroke-dasharray: 0 0;
 }
 
 
@@ -609,14 +609,15 @@ main {
     animation-fill-mode: forwards;
 }
 
-@keyframes checkboxComplete{
-    from{
-        scale: 0; transform: rotate(80deg);
+@keyframes checkboxComplete {
+    from {
+        scale: 0;
+        transform: rotate(80deg);
     }
 
-    to{
-       scale: 1;
-       transform: rotate(0deg);
+    to {
+        scale: 1;
+        transform: rotate(0deg);
     }
 }
 
@@ -624,10 +625,10 @@ main {
     content: '';
     position: absolute;
     width: 4px;
-    height:  7px;
+    height: 7px;
     background: transparent;
-    border-bottom:1.8px solid white;
-    border-right:1.8px solid white;
+    border-bottom: 1.8px solid white;
+    border-right: 1.8px solid white;
     inset: 0;
     margin: auto;
     top: -3px;
@@ -635,20 +636,21 @@ main {
     transform: rotate(47deg);
 }
 
-.loading-circle{
-   animation-name: Loading;
-   animation-iteration-count: infinite;
-   animation-fill-mode: forwards;
-   animation-duration: 1s;
-   animation-timing-function: ease-in-out;
+.loading-circle {
+    animation-name: Loading;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
 }
 
 @keyframes Loading {
-    from{
+    from {
         transform: rotate(0turn);
     }
-     to{
-       transform: rotate(1turn);
+
+    to {
+        transform: rotate(1turn);
     }
 }
 
@@ -656,9 +658,9 @@ main {
     display: none;
 }
 
-.circle-with-checkbox, 
+.circle-with-checkbox,
 .loading-circle,
-.unchecked{
+.unchecked {
     position: absolute;
     inset: 0;
 }
@@ -681,19 +683,29 @@ main {
     margin-bottom: 0.2rem;
 }
 
-.block .checkbox-label{
+.block .checkbox-label {
     font-weight: 600;
 }
 
-.block-collapse .checkbox-label{
+.block-collapse .checkbox-label {
     font-weight: 500;
 }
+
 /* this is the css that collapses the block */
+.block {
+    margin-bottom: 10px;
+}
 
 .block.block-collapse {
     background: white;
     height: 42px;
     cursor: pointer;
+    margin-bottom: 3px;
+}
+
+.block.block-collapse .checkbox-container {
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 .block-collapse .description-container,
