@@ -225,6 +225,9 @@ checkboxButton.forEach(function (checkbox) {
             counter.innerHTML = `${checkedCheckbox.length} / ${checkboxButton.length} completed`
 
             counterBar.style.width = (checkedCheckbox.length / checkboxButton.length) * 100 + '%';
+
+            counter.ariaLabel = `${checkedCheckbox.length} out of ${checkboxButton.length} checkboxes has been checked`
+
         }, 1000);
     }
 
@@ -245,6 +248,8 @@ checkboxButton.forEach(function (checkbox) {
         counter.innerHTML = `${checkedCheckbox.length} / ${checkboxButton.length} completed`
 
         counterBar.style.width = (checkedCheckbox.length / checkboxButton.length) * 100 + '%';
+
+        counter.ariaLabel = `${checkedCheckbox.length} out of ${checkboxButton.length} checkboxes has been checked`
 
     }
 
